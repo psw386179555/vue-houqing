@@ -8,44 +8,37 @@
 		 </mt-header>
 		 <div class="container">		 	
 		 	<router-view/>
-		 </div>		 		
-	 	 <mt-button type="primary" @click="toast">primary</mt-button>
+		 </div>	
 	</div>
 	
 </template>
 
 <script type="text/javascript">
-	import { Toast } from 'mint-ui';
-	import { Indicator } from 'mint-ui';
 	export default{
 		name:"Frame"
 		,created:function(){}
-		,methods:{
-			toast:function(){
-				Toast({
-				  message: '操作成功',
-				  iconClass: 'mintui mintui-success'
-				});
-
-				 this.$axios.get('https://fujs.xin/api/v1/banner').then((res)=>{
-				        console.log(res)
-				      })
-			}
+		,methods:{			
 		}
 	}
 </script>
 
-<style type="text/css">
+<style type="text/css" scoped>
 	.mint-header{
-		height: 50px;
+		height: 40px;
 	}
 	.container{
-		margin-top: 50px;
+		margin-top: 40px;
 	}
 	.mintui-success{
 	  font-size: 48px;
 	}
 	.glyphicon-user{
 		font-size: 18px;
+	}
+	.mint-header-button button:hover{
+		text-decoration: none;
+	}
+	.mint-toast-text{
+		z-index: 100;
 	}
 </style>

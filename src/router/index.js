@@ -4,6 +4,7 @@ import Frame from '@/components/Frame'
 import Index from '@/components/Index'
 import Found from '@/components/Found'
 import User from '@/components/User'
+import Repair from '@/components/Repair'
 
 Vue.use(Router)
 
@@ -19,13 +20,23 @@ export default new Router({
       ,name:'user'
       ,component: User        
     },{
-      path:'/found'
-      ,name:'found'
+      path:''
       ,component:Frame
       ,children:[
         {
-          path:''
+          path:'/found'
+          ,name:'found'
           ,component:Found
+        }
+      ]
+    },{
+      path:''     
+      ,component:Frame
+      ,children:[
+        {
+          path:'/repair'
+          ,name:'repair'
+          ,component:Repair
         }
       ]
     }

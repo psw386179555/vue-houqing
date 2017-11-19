@@ -3,15 +3,20 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from 'axios'
+// import axios from 'axios'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import Base from './assets/Base'
+
+import Token from './assets/Token'
+
+
 
 Vue.config.productionTip = true
 
 Vue.use(MintUI)
 
-Vue.prototype.$axios = axios
+Vue.prototype.$myBase = Base
 
 /* eslint-disable no-new */
 new Vue({
@@ -19,4 +24,9 @@ new Vue({
   router,
   template: '<App/>',
   components: { App }
+  ,beforeCreate(){
+  	// console.log("************///******")
+  	// this.$myBase.show();
+  	Token.getTokenFromService()
+  }
 })

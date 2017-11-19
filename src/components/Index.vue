@@ -1,12 +1,12 @@
 <template>
 	<div id="index">
 		<div class="header">
-			<div @click="toBao"><i class="fa fa-wrench"></i>智能保修</div>
+			<div @click="toRepair"><i class="fa fa-wrench"></i>智能保修</div>
 			<div @click="toUser"><i class="fa fa-user"></i>个人中心</div>
 		</div>
 
 		<div class="gn">
-			<router-link class="gn-item" v-for="item in gn" :to="item.url">
+			<router-link class="gn-item" v-for="item in gn" :to="item.url" :key="item.id">
 					<div v-bind:class="item.className" class="gn-icon"></div>
 					<div class="gn-name">{{item.name}}</div>				
 			</router-link>
@@ -16,7 +16,7 @@
 </template>
 
 <script type="text/javascript">
-	import footer from './footer.vue'
+	import footer from './footer.vue'	
 	import router from '../router'
 	export default{
 		name:"Index"
@@ -38,6 +38,9 @@
 		,methods:{
 			toUser:function(){
 				router.push("user")
+			}
+			,toRepair:function(){
+				router.push("repair")
 			}
 		}
 	}
