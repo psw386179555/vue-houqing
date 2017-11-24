@@ -1,12 +1,21 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+	<div id="app">
+		<router-view/>
+	</div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+	name: 'app'
+	,updated(){
+		// console.log('updated')
+		// console.log(this)
+	}
+	,beforeCreate(){
+		// console.log(this.$router.history.current);
+
+	}
+	
 }
 </script>
 <style type="text/css" src="../static/css/reset.css"></style>

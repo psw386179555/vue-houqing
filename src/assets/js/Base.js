@@ -47,14 +47,9 @@ export default{
         }
         return '';
     }
-
     ,deleteLocalStorage(key){
         return localStorage.removeItem(key);
-    }
-
-    ,show(){
-    	console.log('good')
-    }
+    }   
 }
 
 

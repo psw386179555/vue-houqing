@@ -1,5 +1,10 @@
 <template>
 	<div id="index">
+		<mt-swipe :auto="4000">
+		  <mt-swipe-item><img src="../assets/lx1.png"></mt-swipe-item>
+		  <mt-swipe-item><img src="../assets/lx2.png"></mt-swipe-item>
+		  <mt-swipe-item><img src="../assets/lx3.png"></mt-swipe-item>
+		</mt-swipe>
 		<div class="header">
 			<div @click="toRepair"><i class="fa fa-wrench"></i>智能保修</div>
 			<div @click="toUser"><i class="fa fa-user"></i>个人中心</div>
@@ -23,7 +28,7 @@
 		,data(){
 			return{
 				gn:[
-					{className:'fa fa-key',name:'失物招领',url:'Found'}
+					{className:'fa fa-key',name:'失物招领',url:'found'}
 					,{className:'fa fa-address-book-o',name:'电话本',url:''}
 					,{className:'fa fa-car',name:'班车预定',url:''}
 					,{className:'fa fa-tint',name:'微信订水',url:''}
@@ -47,9 +52,20 @@
 </script>
 
 <style type="text/css" scoped>
+	.mint-swipe{
+		height: 150px;
+	}
+	.mint-swipe .mint-swipe-item{		
+		height: 150px;
+		overflow: hidden;
+	}
+	.mint-swipe .mint-swipe-item img{
+		width: 100%	;	
+		height: 100%;
+	}
 	#index .header{
 		width: 100%;
-		height: 30vw;
+		height: 20vw;
 		background-color: #26a2ff;
 		display: flex;
 		flex-direction: row;
@@ -57,7 +73,7 @@
 	.header div{
 		flex: 1;
 		text-align: center;
-		line-height: 30vw;
+		line-height: 20vw;
 		color: #fff;
 		font-weight: bold;
 		font-size: 22px;

@@ -11,34 +11,34 @@ Vue.use(Router)
 export default new Router({
 	mode:"history"
   ,routes: [
+  {
+    path: '/'
+    ,name:'index'
+    ,component: Index           
+  },{
+    path:''
+    ,component:Frame
+    ,children:[
+      {
+        path:'/found'
+        ,name:'found'
+        ,component:Found
+      },{
+        path:'/user'
+        ,name:'user'
+        ,component:User
+      }
+    ]
+  },{
+    path:''     
+    ,component:Frame
+    ,children:[
     {
-      path: '/'
-      ,name:'index'
-      ,component: Index           
-    },{
-      path: '/user'
-      ,name:'user'
-      ,component: User        
-    },{
-      path:''
-      ,component:Frame
-      ,children:[
-        {
-          path:'/found'
-          ,name:'found'
-          ,component:Found
-        }
-      ]
-    },{
-      path:''     
-      ,component:Frame
-      ,children:[
-        {
-          path:'/repair'
-          ,name:'repair'
-          ,component:Repair
-        }
-      ]
+      path:'/repair'
+      ,name:'repair'
+      ,component:Repair
     }
+    ]
+  }
   ]
 })

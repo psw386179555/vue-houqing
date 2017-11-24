@@ -4,7 +4,9 @@
 		 	  <router-link to="/" slot="left">
 			    <mt-button icon="back"></mt-button>
 			  </router-link>
-		 	 <mt-button icon="user" slot="right"><i class="glyphicon glyphicon-user-circle-o"></i></mt-button>
+		 	 <router-link to="/user" slot="right">
+		 	 	<mt-button><i class="glyphicon glyphicon-user"></i></mt-button>
+		 	 </router-link>
 		 </mt-header>
 		 <div class="container">		 	
 		 	<router-view/>

@@ -5,10 +5,12 @@ import App from './App'
 import router from './router'
 // import axios from 'axios'
 import MintUI from 'mint-ui'
-import 'mint-ui/lib/style.css'
-import Base from './assets/Base'
 
-import Token from './assets/Token'
+import 'mint-ui/lib/style.css'
+
+import Base from './assets/js/Base'
+
+import Token from './assets/js/Token'
 
 
 
@@ -27,6 +29,7 @@ new Vue({
   ,beforeCreate(){
   	// console.log("************///******")
   	// this.$myBase.show();
-  	Token.getTokenFromService()
+  	// Token.getTokenFromService()
+  	console.log(router.history.current)
   }
 })
